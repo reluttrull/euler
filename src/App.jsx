@@ -2,14 +2,15 @@ import { useState } from 'react'
 import { euler1 } from './solutions/euler1.jsx';
 import { euler2 } from './solutions/euler2.jsx';
 import { euler3 } from './solutions/euler3.jsx';
+import { euler4 } from './solutions/euler4.jsx';
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
   const [showing, setShowing] = useState(0);
-  let mySolutions = [{"id": "1"}, {"id": "2"}, {"id": "3"}];
+  let mySolutions = [{"id": "1"}, {"id": "2"}, {"id": "3"}, {"id": "4"}];
   const components = {
-    euler1, euler2, euler3
+    euler1, euler2, euler3, euler4
   };
 
   const DynamicComponent = ({ componentName }) => {
