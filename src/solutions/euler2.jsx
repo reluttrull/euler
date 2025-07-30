@@ -2,19 +2,29 @@ import React, { useEffect, useState } from 'react';
 
 export const euler2 = () => {
   const [displayFibonacci, setDisplayFibonacci] = useState([]);
+  const [displaySum, setDisplaySum] = useState(0);
 
   useEffect(() => {
     let fibonacci = [];
     let previous = 0;
     let current = 1;
-    for (let i = 0; i < 10; i++) {
-      var next = previous + current;
-      fibonacci.push(next)
-      previous = current;
-      current = next;
-    }
+    let next = previous + current;
+      while (next < 4000000) {
+        if (next % 2 == 0) {
+          fibonacci.push(next);
+        }
+        previous = current;
+        current = next;
+        next = previous + current;
+      }
+    
     console.log(fibonacci);
     setDisplayFibonacci(fibonacci);
+    let sum = 0;
+    fibonacci.forEach(num => {
+      sum += num;
+    });
+    setDisplaySum(sum);
   }, []);
 
   return (
@@ -24,8 +34,8 @@ export const euler2 = () => {
       <p>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</p>
 
       <br />
-      <div className="display-equation">{displayFibonacci}</div>
-      <h3><span className="spoiler"></span></h3>
+      <div className="display-equation">{displayFibonacci.map(num => <span key={num}>{num}{displayFibonacci.indexOf(num) + 1 < displayFibonacci.length ? " + " : " = "}</span>)}</div>
+      <h3><span className="spoiler">{displaySum}</span></h3>
     </>
   );
 };
