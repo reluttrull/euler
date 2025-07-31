@@ -1,15 +1,16 @@
-import { useState } from 'react'
-import { euler1 } from './solutions/euler1.jsx';
-import { euler2 } from './solutions/euler2.jsx';
-import { euler3 } from './solutions/euler3.jsx';
-import { euler4 } from './solutions/euler4.jsx';
-import { euler5 } from './solutions/euler5.jsx';
+import { lazy, useState } from 'react'
 import './App.css'
+const euler1 = lazy(() => import('./solutions/euler1.jsx'));
+const euler2 = lazy (() => import('./solutions/euler2.jsx'));
+const euler3 = lazy (() => import('./solutions/euler3.jsx'));
+const euler4 = lazy (() => import('./solutions/euler4.jsx'));
+const euler5 = lazy (() => import('./solutions/euler5.jsx'));
 
 function App() {
   const [count, setCount] = useState(0)
   const [showing, setShowing] = useState(0);
   let mySolutions = [{"id": "1"}, {"id": "2"}, {"id": "3"}, {"id": "4"}, {"id": "5"}];
+  
   const components = {
     euler1, euler2, euler3, euler4, euler5
   };
