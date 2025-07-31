@@ -9,14 +9,17 @@ export const euler2 = () => {
     let previous = 0;
     let current = 1;
     let next = previous + current;
-      while (next < 4000000) {
-        if (next % 2 == 0) {
-          fibonacci.push(next);
-        }
-        previous = current;
-        current = next;
-        next = previous + current;
+    // make sure we don't go over 4,000,000
+    while (next < 4000000) {
+      // if even
+      if (next % 2 == 0) {
+        fibonacci.push(next);
       }
+      previous = current;
+      current = next;
+      // get next in fibonacci sequence
+      next = previous + current;
+    }
     
     console.log(fibonacci);
     setDisplayFibonacci(fibonacci);

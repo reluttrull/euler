@@ -15,6 +15,7 @@ export const euler1 = () => {
   useEffect(() => {
     let i = 1;
     let numbers = [];
+    // gather the numbers that are multiples of 3 or 5 in an array
     while (i < 1000) {
       if (i%3==0 || i%5==0) numbers.push(i);
       i++;
@@ -22,6 +23,7 @@ export const euler1 = () => {
     console.log(numbers);
     setDisplayNumbers(numbers);
     total = 0;
+    // add up
     numbers.forEach(number => {
       total += number;
     });

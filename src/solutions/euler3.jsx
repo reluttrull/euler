@@ -7,14 +7,19 @@ export const euler3 = () => {
   const [displayHighest, setDisplayHighest] = useState(0);
 
   const isPrime = (num) => {
+  // maximum possible factor of a number (other than itself)
+  //   is its square root
   let maxFactor = Math.floor(Math.sqrt(num));
     for (let i = 2; i <= maxFactor; i++) {
+      // if it has any factors other than 1 (skipped) or itself (not reached), 
+      //   kick it out
       if (num % i == 0) return false;
     }
     return true;
   }
 
   const getPrimeFactors = (num) => {
+  // same logic applies, we don't need to test higher than sqrt
   let maxFactor = Math.floor(Math.sqrt(num));
     let factors = [];
     for (let i = 2; i < maxFactor; i++) {

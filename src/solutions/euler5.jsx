@@ -4,7 +4,7 @@ export const euler5 = () => {
   const [displayNumber, setDisplayNumber] = useState(0);
 
   const hasAllFactors = (num, max) => {
-    // we already checked that the number is even
+    // we already checked that the number is even, can skip 2
     for (let i = 3; i <= max; i++) {
       if (num % i != 0) return false;
     }
@@ -14,7 +14,7 @@ export const euler5 = () => {
   const getSmallestWithAllFactors = (max) => {
     let test = max;
     while (true) { 
-      // don't bother with odd numbers
+      // don't bother with odd numbers (slightly faster processing)
       if (test % 2 == 0) {
         if (hasAllFactors(test, max)) return test;
       }

@@ -8,8 +8,10 @@ export const euler4 = () => {
 
   const isPalindrome = (num) => {
     let numString = String(num);
-    while (numString.length > 1) {
+    while (numString.length > 1) { // odd number of digits or empty
+      // outside digits don't match, kick it out
       if (numString[0] != numString[numString.length-1]) return false;
+      // gradually reduce string from inside out
       numString = numString.substring(1,numString.length-1);
     }
     return true;
@@ -17,14 +19,14 @@ export const euler4 = () => {
 
   useEffect(() => {
     let products = [];
-    for (let x = 100; x < 1000; x++) {
-      for (let y = 100; y < 1000; y++) {
+    for (let x = 100; x < 1000; x++) { // 3-digit number x
+      for (let y = 100; y < 1000; y++) { // 3-digit number y
         let product = x * y;
         if (isPalindrome(product)) products.push(product);
       }
     }
-    products.sort((a, b) => a - b);
-    products = [...new Set(products)];
+    products.sort((a, b) => a - b); // sort low to high
+    products = [...new Set(products)]; // only unique numbers
     setDisplayProducts(products);
     setDisplayHighest(products[products.length-1]);
   }, []);
