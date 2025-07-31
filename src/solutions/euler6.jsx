@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export const euler5 = () => {
+export const euler6 = () => {
   const [displayEquation, setDisplayEquation] = useState("");
   const [displayNumber, setDisplayNumber] = useState(0);
 
@@ -42,4 +42,4 @@ export const euler5 = () => {
   );
 };
 
-export default euler5;
+export default euler6;
