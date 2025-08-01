@@ -8,15 +8,16 @@ const euler5 = lazy (() => import('./solutions/euler5.jsx'));
 const euler6 = lazy (() => import('./solutions/euler6.jsx'));
 const euler7 = lazy (() => import('./solutions/euler7.jsx'));
 const euler8 = lazy (() => import('./solutions/euler8.jsx'));
+const euler9 = lazy (() => import('./solutions/euler9.jsx'));
 
 function App() {
   const [count, setCount] = useState(0)
   const [showing, setShowing] = useState(0);
   let mySolutions = [{"id": "1"}, {"id": "2"}, {"id": "3"}, {"id": "4"}, {"id": "5"}, 
-    {"id": "6"}, {"id": "7"}, {"id": "8"}];
+    {"id": "6"}, {"id": "7"}, {"id": "8"}, {"id": "9"}];
   
   const components = {
-    euler1, euler2, euler3, euler4, euler5, euler6, euler7, euler8
+    euler1, euler2, euler3, euler4, euler5, euler6, euler7, euler8, euler9
   };
 
   const DynamicComponent = ({ componentName }) => {
