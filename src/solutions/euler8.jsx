@@ -6,6 +6,7 @@ export const euler8 = () => {
   const [displayProduct, setDisplayProduct] = useState(0);
 
   const getProductFromDigits = (str) => {
+    // turn into array so we can easily reduce into total product
     return str.split("").reduce((partialProd, a) => partialProd * a, 1);
   }
 
@@ -13,14 +14,15 @@ export const euler8 = () => {
     let topDigits = "0";
     let topProduct = 0;
     for (let i = 0; i + n <= str.length; i++) {
-      let currentDigits = str.substring(i,i+n);
+      let currentDigits = str.substring(i,i+n); // n-length substring starting at i
       let currentProduct = getProductFromDigits(currentDigits);
       if (currentProduct > topProduct) {
+        // current best
         topDigits = currentDigits;
         topProduct = currentProduct;
       }
     }
-    return topDigits;
+    return topDigits; // return the best substring found
   }
 
   useEffect(() => {

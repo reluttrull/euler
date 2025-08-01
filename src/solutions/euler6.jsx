@@ -7,7 +7,7 @@ export const euler6 = () => {
   const sumSquares = (highest) => {
     let sum = 0;
     for (let i = 1; i <= highest; i++) {
-      sum += i**2;
+      sum += i**2; // add this square to the total
     }
     return sum;
   }
@@ -19,8 +19,6 @@ export const euler6 = () => {
   }
 
   useEffect(() => {
-    console.log(sumSquares(10));
-    console.log(squareSums(10));
     let a = squareSums(100);
     let b = sumSquares(100);
     setDisplayEquation(String(a) + " - " + String(b) + " =");

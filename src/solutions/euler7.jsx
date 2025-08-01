@@ -5,6 +5,7 @@ export const euler7 = () => {
   const [displayNumber, setDisplayNumber] = useState(0);
 
   const isPrime = (num) => {
+    // max factor of a number (other than itself) is its square root
     let maxFactor = Math.floor(Math.sqrt(num));
     for (let i = 2; i <=maxFactor; i++) {
       if (num % i == 0) return false;
@@ -12,6 +13,7 @@ export const euler7 = () => {
     return true;
   }
 
+  // returns an array with the first n primes
   const nPrimes = (n) => {
     let primes = []
     for (let testNumber = 2; primes.length <= n; testNumber++) {
